@@ -25,20 +25,22 @@
 
 #include <fcntl.h> /* File control definitions */
 #include <errno.h> /* Error number definitions */
+#include <libvisca_pcc.h>
 
 #define EVI_D30
 
 int main(int argc, char **argv)
 {
 
-  VISCAInterface_t iface;
+  VISCAInterface_pcc_t iface;
+
   VISCACamera_t camera;
 
 
   int camera_num;
   uint8_t value;
   uint16_t zoom;
-  uint16_t pan_pos, tilt_pos;
+  int16_t pan_pos, tilt_pos;
 
   if (argc<2)
     {

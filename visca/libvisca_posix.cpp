@@ -108,9 +108,9 @@ _VISCA_get_packet(VISCAInterface_t *iface)
     // get octets one by one
     bytes_read=read(iface->port_fd, iface->ibuf, 1);
     while (iface->ibuf[pos]!=VISCA_TERMINATOR) {
-	pos++;
-	bytes_read=read(iface->port_fd, &iface->ibuf[pos], 1);
-	usleep(0);
+        pos++;
+        bytes_read=read(iface->port_fd, &iface->ibuf[pos], 1);
+        usleep(0);
     }
     iface->bytes=pos+1;
 
